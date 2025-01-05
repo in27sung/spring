@@ -143,9 +143,15 @@ public class HelloController {
 ```
 **View**
 ```html
-<html xmlns:th="http://www.thymeleaf.org">
- <body>
-  <p th:text="'hello ' + ${name}">hello! empty</p>
- </body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello</title>
+</head>
+<body>
+  <h1 th:text="'hello ' + ${name}">Hello!</h1>
+</body>
 </html>
 ```
