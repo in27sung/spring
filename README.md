@@ -15,10 +15,17 @@
 **[spring Starter](https://start.spring.io)로 이동해서 스프링 프로젝트 생성**
 
 * 프로젝트 선택
-  1. Project: **Gradle - Groovy** Project
-  2. Spring Boot: 3.x.x
-  3. Language: java
-  4. Java: 17 or 21
+  * Project: **Gradle - Groovy** Project
+  * Spring Boot: 3.x.x
+  * Language: java
+  * Java: 17 or 21
+  
+* Project Metadata
+  * Group: spring
+  * Artifact: spring
+  * Name: tutorial
+  * Package Name: com.spring
+
 * Dependencies
   1. Spring Web
   2. Thymeleaf
@@ -87,3 +94,10 @@
     - 스프링 부트 템플릿엔진 기본 viewName mapping
     - resources:templates/ + {ViewName} + .html
 
+
+## 빌드하고 실행하기 
+**Terminal 이동**
+1. ./gradlew build
+2. cd build/libs
+3. java -jar spring-0.0.1-SNAPSHOT.jar
+4. 실행 확인
