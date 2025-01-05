@@ -157,3 +157,34 @@ public class HelloController {
 **실행:** http://localhost:8080/hello-mvc?name=spring
 
 ### API
+**@ResponseBody 문자 반환**
+- `@ResponseBody`를 사용하면 뷰 리볼저(viewResolver)를 사용하지 않는다.
+- 대신에 http의 body에 문자 내용을 직접 반환한다.
+- `@ResponseBody`를 사용하고, 객체를 반환하면 객체가 JSON으로 변환된다.
+
+```java
+@Controller
+public calls HelloController {
+
+    @GetMapping("hello-string")
+    @ResponseBody
+    public String helloString(@RequestParam("name") String name) {
+
+        // HttpMessageConverter
+        // StringConverter
+        return "hello " + name; // "hello Spring"
+    }
+}
+```
+**실행:** http://localhost:8080/hello-string?name=spring
+
+**@ResponseBody 사용 원리**
+<img width="636" alt="Screenshot 2025-01-05 at 8 18 12 pm" src="https://github.com/user-attachments/assets/69f00f91-f421-466b-ba4f-aeaebe12c72b" />
+
+**@ResponseBody를 사용**
+- HTTP의 BODY에 문자 내용을 직접 반환한다.
+- `viewResolver` 대신에 `HttpMessageConverter`가 동작한다.
+- 기본 문자처리: `StringHttpMessageConverter`
+- 기본 객체처리: `MappingJackson2HttpMessageConverter`
+- byte 처리 등등 기타 여러 HttpMessageConverter가 기본으로 등록되어 있다.
+
