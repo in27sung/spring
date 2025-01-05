@@ -89,7 +89,7 @@
   - [tymeleaf](https://www.thymeleaf.org/) 공식 사이트
 
 
-<img width="632" alt="Screenshot 2025-01-05 at 6 26 45 pm" src="https://github.com/user-attachments/assets/82053e84-e75e-4ffc-b5c8-b0db8a074dd2" />
+<img width="800" alt="Screenshot 2025-01-05 at 6 26 45 pm" src="https://github.com/user-attachments/assets/82053e84-e75e-4ffc-b5c8-b0db8a074dd2" />
 <br>
 
 - 컨트롤러에서 리턴 값으로 문자를 반환하면 뷰 리졸버(viewResolver)가 화면을 찾아서 처리한다.
@@ -123,7 +123,8 @@
 ```
 **실행:** http://localhost:8080/hello-static.html
 
-<img width="638" alt="Screenshot 2025-01-05 at 8 06 23 pm" src="https://github.com/user-attachments/assets/4d5d52f1-43a2-4004-a077-84b329fe4da5" />
+<img width="800" alt="Screenshot 2025-01-05 at 8 06 23 pm" src="https://github.com/user-attachments/assets/4d5d52f1-43a2-4004-a077-84b329fe4da5" />
+<br>
 
 ### MVC와 템플릿 엔진 
 - MVC: Model, View, Controller
@@ -179,7 +180,9 @@ public calls HelloController {
 **실행:** http://localhost:8080/hello-string?name=spring
 
 **@ResponseBody 사용 원리**
-<img width="636" alt="Screenshot 2025-01-05 at 8 18 12 pm" src="https://github.com/user-attachments/assets/69f00f91-f421-466b-ba4f-aeaebe12c72b" />
+
+<img width="800" alt="Screenshot 2025-01-05 at 8 18 12 pm" src="https://github.com/user-attachments/assets/69f00f91-f421-466b-ba4f-aeaebe12c72b" />
+<br>
 
 **@ResponseBody를 사용**
 - HTTP의 BODY에 문자 내용을 직접 반환한다.
