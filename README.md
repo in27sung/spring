@@ -83,7 +83,7 @@
 - 스프링 부트가 제공하는 [Welcome Page](https://docs.spring.io/spring-boot/reference/web/servlet.html#web.servlet.spring-mvc.welcome-page) 기능
   - static/index.html을 올려두면 Welcome page 기능을 제공한다.
 
-## thymeleaf 템플릿 엔진 
+### thymeleaf 템플릿 엔진 
   - [tymeleaf](https://www.thymeleaf.org/) 공식 사이트
 
 
