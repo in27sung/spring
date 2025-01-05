@@ -121,8 +121,7 @@
   </body>
 </html>
 ```
-**실행**
-- http://localhost:8080/hello-static.html
+**실행:** http://localhost:8080/hello-static.html
 
 <img width="638" alt="Screenshot 2025-01-05 at 8 06 23 pm" src="https://github.com/user-attachments/assets/4d5d52f1-43a2-4004-a077-84b329fe4da5" />
 
@@ -141,7 +140,7 @@ public class HelloController {
  }
 }
 ```
-**View**
+**[View](https://github.com/in27sung/spring/tree/main/src/main/resources/templates)**
 ```html
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -155,3 +154,6 @@ public class HelloController {
 </body>
 </html>
 ```
+**실행:** http://localhost:8080/hello-mvc?name=spring
+
+### API
