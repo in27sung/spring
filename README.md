@@ -82,6 +82,7 @@
 
 <img width="632" alt="Screenshot 2025-01-05 at 6 26 45 pm" src="https://github.com/user-attachments/assets/82053e84-e75e-4ffc-b5c8-b0db8a074dd2" />
 <br>
+
 - 컨트롤러에서 리턴 값으로 문자를 반환하면 뷰 리졸버(viewResolver)가 화면을 찾아서 처리한다.
     - 스프링 부트 템플릿엔진 기본 viewName mapping
     - resources:templates/ + {ViewName} + .html
