@@ -4,7 +4,7 @@
 ## 목차 
 
 - [프로젝트 환경설정](#프로젝트-환경설정)
-- [스프링 웹 개발 기초](#라이브러리-살펴보기-1)
+- [스프링 웹 개발 기초](#스프링-웹-개발-기초)
 - [회원 관리 예제 - 백엔드 개발](#View-환경설정-1)
 - [스프링 빈과 의존관계](#빌드하고-실행하기-1)
 
@@ -103,3 +103,49 @@
 2. cd build/libs
 3. java -jar spring-0.0.1-SNAPSHOT.jar
 4. 실행 확인
+
+## 스프링 웹 개발 기초 
+
+### 정적 컨텐츠 
+- 스프링 부트 정적 컨텐츠 기능
+
+```html 
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>static content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ </head>
+  <body>
+   정적 컨텐츠 입니다.
+  </body>
+</html>
+```
+**실행**
+- http://localhost:8080/hello-static.html
+
+<img width="638" alt="Screenshot 2025-01-05 at 8 06 23 pm" src="https://github.com/user-attachments/assets/4d5d52f1-43a2-4004-a077-84b329fe4da5" />
+
+### MVC와 템플릿 엔진 
+- MVC: Model, View, Controller
+
+**Controller**
+```java
+@Controller
+public class HelloController {
+
+ @GetMapping("hello-mvc")
+ public String helloMvc(@RequestParam("name") String name, Model model) {
+   model.addAttribute("name", name);
+   return "hello-template";
+ }
+}
+```
+**View**
+```html
+<html xmlns:th="http://www.thymeleaf.org">
+ <body>
+  <p th:text="'hello ' + ${name}">hello! empty</p>
+ </body>
+</html>
+```
