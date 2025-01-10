@@ -5,7 +5,7 @@
 
 - [프로젝트 환경설정](#프로젝트-환경설정)
 - [스프링 웹 개발 기초](#스프링-웹-개발-기초)
-- [회원 관리 예제 - 백엔드 개발](#View-환경설정-1)
+- [회원 관리 예제 - 백엔드 개발](#회원-관리-예제)
 - [스프링 빈과 의존관계](#빌드하고-실행하기-1)
 
 
@@ -186,8 +186,26 @@ public calls HelloController {
 
 **@ResponseBody를 사용**
 - HTTP의 BODY에 문자 내용을 직접 반환한다.
+
+ 
 - `viewResolver` 대신에 `HttpMessageConverter`가 동작한다.
 - 기본 문자처리: `StringHttpMessageConverter`
 - 기본 객체처리: `MappingJackson2HttpMessageConverter`
 - byte 처리 등등 기타 여러 HttpMessageConverter가 기본으로 등록되어 있다.
 
+## 비즈니스 요구사항 정리
+- 데이터: 회원ID, 이름
+- 기능: 회원 등록, 조회
+- 아직 데이터 저장소가 선정되지 않음(가상의 시나리오)
+
+**일반적인 웹 애플리케이션 계층 구조**
+<img width="629" alt="Screenshot 2025-01-10 at 3 54 48 pm" src="https://github.com/user-attachments/assets/d38daba4-c05e-4c5f-be50-a021d0bafc16" />
+
+- Controller: 웹 MVC의 컨트롤러 역할
+- Service: 핵심 비즈니스 로직 구현(중복 확인)
+- Repository: 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리
+- Domain: 비즈니스 도메인 객체, 예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리됨
+
+
+**클래스 의존관계**ㅇ
+<img width="633" alt="Screenshot 2025-01-10 at 3 56 29 pm" src="https://github.com/user-attachments/assets/1468ff8a-6d91-4d0c-932c-457bd3eda436" />
