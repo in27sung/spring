@@ -209,5 +209,27 @@ public calls HelloController {
 - Domain: 비즈니스 도메인 객체, 예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리됨
 
 
-**클래스 의존관계**ㅇ
+**클래스 의존관계**
 <img width="633" alt="Screenshot 2025-01-10 at 3 56 29 pm" src="https://github.com/user-attachments/assets/1468ff8a-6d91-4d0c-932c-457bd3eda436" />
+
+- 아직 데이터 저장소가 선정되지 않아서, 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계한다.
+- 데이터 저장소는 RDB, NoSQL 등 다양한 저장소를 고민중인 상황으로 가정한다.
+- 개발을 진행하기 위해서 초기 개발 단계에서는 구현체로 가벼운 메모리 기반의 데이터 저장소를 사용한다.
+
+### 회원 리포지토리 테스트 케이스 작성 
+개발한 기능을 실행해서 테스트 할 때 자바의 main 메서드를 통해서 실행하거나, 웹 애플리케이션의 컨트롤러를 통해서 해당 기능을 실행한다. 이러한 방법은 준비하고 실행하는데 오래 걸리고, 반복 실행하기 어렵고 여러 테스트를 한번에 실행하기 어렵다는 단점이 있다. 자바는 JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결한다.
+
+**@AfterEach**
+```JAVA
+public void clearStore() {
+    store.clear();
+}
+```
+
+```JAVA
+@AfterEach
+public void afterEach() {
+    repository.clearStore();
+}
+```
+
