@@ -30,6 +30,7 @@ class MemoryMemberRepositoryTest {
 
         repository.save(member);
 
+        // Extract -> Introduce Variable (⌥ + ⌘ + V)
         Member result = repository.findById(member.getId()).get();
 //        System.out.println("result = " + (result == member));
 //        Assertions.assertEquals(member, result);

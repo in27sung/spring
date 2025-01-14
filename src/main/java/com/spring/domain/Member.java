@@ -5,6 +5,7 @@ public class Member {
     private Long id;
     private String name;
 
+    // Getter and Setter(⌘ + N)
     public Long getId() {
         return id;
     }
