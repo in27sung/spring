@@ -232,4 +232,35 @@ public void afterEach() {
     repository.clearStore();
 }
 ```
+- '@AfterEach': 한번에 여러 테스트를 실행하면 메모리 DB에 직전 테스트의 결과가 남을 수 있다. 이렇게 되면 다음 이전 테스트 때문에 다음 테스트가 실패할 가능성이 있다. '@AfterEach'를 사용하면 각 테스트가 종료될 때 마다 이 기능을 실행한다. 메모리 DB에 저장된 데이터를 삭제한다.
+- 테스트는 각각 독립적으로 실행되어야 한다. 테스트 순서에 의존관계가 있는 것은 좋은 테스트가 아니다.
+
+### 회원 서비스 테스트
+- 테스트는 given, when, then 패턴으로 이루어진다.
+- given: 이러한 상황이 주어졌을 때
+- when: 이것을 실행했을 때
+- then: 이러한 결과가 나와야 한다.
+
+**@BeforeEach**
+```JAVA
+@BeforeEach
+public void beforeEach() {
+    memberrepository = new MemoryMemberRepository();
+    memberservice = new MemberService(memberRepository);
+}
+```
+- '@BeforeEach': 각 테스트를 실행하기 전에 호출된다. 각 테스트가 서로 영향을 주지 않도록 항상 새로운 객체를 생성하고, 의존관계도 새로 맺어준다.
+
+## 스프링 빈과 의존관계
+
+### 컴포넌트 스캔과 자동 의존관계 설정
+회원 컨트롤러가 회원서비스와 회원 리포지토리를 사용할 수 있게 의존관계를 준비하자.
+
+
+
+
+
+
+
+
 
