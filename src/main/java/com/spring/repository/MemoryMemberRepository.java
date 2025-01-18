@@ -9,6 +9,7 @@ public class MemoryMemberRepository implements MemberRepository{
 
     // 동시성 문제가 고려되어 있지 않다, 실무에서는 ConcureentHashMap 사용 고려
     private static Map<Long, Member> store = new HashMap<>();
+
     // 실무에선 AtomicLong 사용 고려
     private static long sequence = 0L;
 

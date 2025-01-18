@@ -9,7 +9,13 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    // ⌘ + N: Constructor 생성
+    // dependency injection
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
@@ -20,6 +26,7 @@ public class MemberService {
         return member.getId();
     }
 
+    // Extract -> Delegate (⌥ + ⌘ + M)
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
