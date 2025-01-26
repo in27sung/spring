@@ -7,6 +7,7 @@
 - [스프링 웹 개발 기초](#스프링-웹-개발-기초)
 - [회원 관리 예제 - 백엔드 개발](#회원-관리-예제---백엔드-개발)
 - [스프링 빈과 의존관계](#스프링-빈과-의존관계)
+- [스프링 DB 접근 기술]
 
 
 ## 프로젝트 환경설정
@@ -269,10 +270,21 @@ public void beforeEach() {
    - `@Service`
    - `@Repository`
 
+## 스프링 DB 접근 기술
+
+### 구현 클래스 추가 이미지 
+![Screenshot 2025-01-26 at 2.14.29 pm.png](../../../var/folders/7b/6s43j55556d1qtk2kmm3gdlw0000gn/T/TemporaryItems/NSIRD_screencaptureui_igpdKs/Screenshot%202025-01-26%20at%202.14.29%E2%80%AFpm.png)
+- 개방-폐쇄 원칙(OCP, Open-Closed Principle)
+  - 확장에는 열려있고, 수정, 변경에는 닫혀있다. 
+- 스프링 DI(Dependencies Injection)을 사용하면 **기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경**할 수 있다.
+- 회원을 등록하고 DB에 결과가 잘 입력되는지 확인하자.
+- 데이터를 DB에 저장하므로 스프링 서버를 다시 실행해도 데이터가 안전하게 저장된다.
 
 
-
-
+### 스프링 통합 테스트 
+**[회원 서비스 스프링 통합 테스트](src/test/java/com/spring/service/MemberServiceIntegrationTest.java)**
+- `@SpringBootTest`: 스프링 컨테이너와 테스트를 함께 실행한다. 
+- `@Transactional`: 테스트 케이스에 이 어노테이션이 있으면, 테스트 시작 전에 트랜잭션을 시작하고, 테스트 완료 후에 항상 롤백한다. 이렇게 하면 DB에 데이터가 남지 않으므로 다음 테스트에 영향을 주지 않는다.
 
 
 
