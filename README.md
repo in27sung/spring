@@ -282,9 +282,13 @@ public void beforeEach() {
 
 
 ### 스프링 통합 테스트 
-**[회원 서비스 스프링 통합 테스트](src/test/java/com/spring/service/MemberServiceIntegrationTest.java)**
 - `@SpringBootTest`: 스프링 컨테이너와 테스트를 함께 실행한다. 
 - `@Transactional`: 테스트 케이스에 이 어노테이션이 있으면, 테스트 시작 전에 트랜잭션을 시작하고, 테스트 완료 후에 항상 롤백한다. 이렇게 하면 DB에 데이터가 남지 않으므로 다음 테스트에 영향을 주지 않는다.
+**[회원 서비스 스프링 통합 테스트](src/test/java/com/spring/service/MemberServiceIntegrationTest.java)**
 
 
+### 스프링 JdbcTemplate
+- 순수 Jdbc와 동일한 환경설정을 하면 된다.
+- 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다. 하지만 SQL은 직접 작성해야 한다.
+**[JdbcTemplate 사용](src/main/java/com/spring/repository/JdbcTemplateMemberRepository.java)**
 
