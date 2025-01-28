@@ -300,13 +300,11 @@ public void beforeEach() {
 - JPA를 사용하면 개발 생산선을 크게 높일 수 있다.
 
 **[JPA 사용](src/main/java/com/spring/repository/JpaMemberRepository.java)**
+- `@Entity`: JPA가 관리하는 객체
 
-### 스프링 데이터 JPA
-> 스프링 부트와 JPA만 사용해도 개발 생산성이 정말 많이 증가하고, 개발해야할 코드도 확연히 줄어듭니다.
-> 리포지토리에 구현 클래스 없이 인터페이스 만으로 개발을 완료할 수 있습니다.
-> 그리고 반복 개발해온 기본 CRUD 기능도 스프링 데이터 JPA가 모두 제공합니다.
-> 따라서, 개발자는 핵심 비즈니스 로직을 개발하는데 집중할 수 있습니다.
+**[JPA 회원 리포지토리](src/main/java/com/spring/repository/JpaMemberRepository.java)**
 
-> **주의:** 하지만 엔티티가 많아지고 관계가 복잡해지면 개발해야 할 코드도 많아질 수 있습니다.
-> 스프링 데이터 JPA는 JPA를 편리하게 사용하도록 도와주는 기술입니다. 따라서 JPA의 기본 개념과 원리를 이해하는 것이 중요합니다.
-
+**[서비스 계층에 트랜잭션 추가](src/main/java/com/spring/service/MemberService.java)**
+- `@Transactional`: 데이터를 저장하거나 변경할 때는 트랜잭션 안에서 실행해야 한다.
+- JPA를 사용하면 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다.
+- JPA를 사용하면 `@Transactional` 어노테이션을 클래스 레벨에 붙이는 것이 좋다.
