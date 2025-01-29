@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class TimeTraceAop {
-
+    // 원하는 위치에 적용할 수 있다.
     @Around("execution(* com.spring..*(..))")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
