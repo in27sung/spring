@@ -320,4 +320,4 @@ public void beforeEach() {
 > 학습한 후에 스프링 데이터 JPA를 학습해야 합니다.
 
 
-![Screenshot 2025-01-28 at 10.48.44 pm.png](../../../var/folders/7b/6s43j55556d1qtk2kmm3gdlw0000gn/T/TemporaryItems/NSIRD_screencaptureui_fdFv2X/Screenshot%202025-01-28%20at%2010.48.44%E2%80%AFpm.png)
+[Screenshot 2025-01-28 at 10.48.44 pm.png](../../../var/folders/7b/6s43j55556d1qtk2kmm3gdlw0000gn/T/TemporaryItems/NSIRD_screencaptureui_fdFv2X/Screenshot%202025-01-28%20at%2010.48.44%E2%80%AFpm.png)
