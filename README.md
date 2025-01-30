@@ -322,6 +322,17 @@ public void beforeEach() {
 
 [Screenshot 2025-01-28 at 10.48.44 pm.png](../../../var/folders/7b/6s43j55556d1qtk2kmm3gdlw0000gn/T/TemporaryItems/NSIRD_screencaptureui_fdFv2X/Screenshot%202025-01-28%20at%2010.48.44%E2%80%AFpm.png)
 
+- 앞의 JPA 설정을 그대로 사용한다.
+
 **[스프링 데이터 JPA 회원 리포지토리](src/main/java/com/spring/repository/SpringDataJpaMemberRepository.java)**
 
 **[스프링 데이터 JPA 회원 리포지토리를 사용하도록 스프링 설정 변경](src/main/java/com/spring/SpringConfig.java)**
+
+- 스프링 데이터 JPA가 `SpringDataJpaMemberRepository` 를 스프링 빈으로 자동 등록해준다.
+
+**스프링 데이터 JPA 제공 기능**
+- 인터페이스를 통한 기본적인 CRUD
+- `findByName()`, `findByEmail()` 처럼 메서드 이름 만으로 조회 기능 제공
+- 페이징 기능 자동 제공
+
+> 창고: 실무에서는 JPA와 스프링 데이터 JPA를 기본으로 사용하고, 복잡한 동적 쿼리는 Querydsl이라는 라이브러리를 사용하면된다. QueryDsl을 사용하면 쿼리도 자바 코드로 안전하게 작성할 수 있고, 동적 쿼리도 편리하게 작성할 수 있다. 이 조합으로 해결하기 어려운 쿼리는 JPA가 제공하는 네이티브 쿼리를 사용하거나, 앞ㅇ서 학습한 스프링 JdbcTemplate를 사용하면 된다.
