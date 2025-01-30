@@ -324,4 +324,4 @@ public void beforeEach() {
 
 **[스프링 데이터 JPA 회원 리포지토리](src/main/java/com/spring/repository/SpringDataJpaMemberRepository.java)**
 
-**[스프링 데이터 JPA 회원 리포지토리를 사용하도록 스프링 설정 변경](src/main/java/com/spring/springconfig.java)**
+**[스프링 데이터 JPA 회원 리포지토리를 사용하도록 스프링 설정 변경](src/main/java/com/spring/SpringConfig.java)**
